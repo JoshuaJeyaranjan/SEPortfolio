@@ -1,7 +1,61 @@
 .nav {
-    padding: 1rem;
-
-    &__link {
-        padding: 1rem;
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--nav-bg); // use your theme variable
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  
+    .nav__list {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  
+      li {
+        .nav__link {
+          text-decoration: none;
+          color: var(--nav-text);
+          font-weight: 500;
+          position: relative;
+          transition: color 0.3s ease;
+  
+          &.active {
+            color: var(--accent-color); // highlight active page
+          }
+  
+          &:hover {
+            color: var(--accent-color);
+          }
+  
+          &::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: var(--accent-color);
+            transition: width 0.3s;
+          }
+  
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
     }
-}
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+      .nav__list {
+        flex-direction: row;
+        gap: 1rem;
+      }
+    }
+  }
+  

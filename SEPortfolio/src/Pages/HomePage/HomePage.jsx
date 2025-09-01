@@ -7,10 +7,7 @@ function HomePage() {
   return (
     <div>
       <Nav/>
-      <Banner
-      title='Hi my name is Josh!'
-      subtitle='Welcome to my Software Portfolio'
-      />
+     <h1>TEST</h1>
 
     </div>
   )

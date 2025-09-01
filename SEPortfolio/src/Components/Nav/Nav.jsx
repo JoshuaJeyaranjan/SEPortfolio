@@ -1,19 +1,20 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Nav.scss'
-
+import ThemeToggle from '../ThemeToggle/ThemeToggle'
 
 function Nav() {
   return (
-    <div className='nav'>
-        <NavLink to='/' className='nav__link'>Home</NavLink>
-        <NavLink to='/about' className='nav__link'>About</NavLink>
-        <NavLink to='/contact' className='nav__link'>Contact</NavLink>
-        <NavLink to='/blog' className='nav__link'>Blog</NavLink>
-        <NavLink to='/admin' className='nav__link'>Admin</NavLink>
-        <NavLink to='/projects`' className='nav__link'>Projects</NavLink>
+<nav className='nav'>
+  
+  <ul className='nav__list'>
+    <li><NavLink to='/about' className='nav__link'>About</NavLink></li>
+    <li><NavLink to='/contact' className='nav__link'>Contact</NavLink></li>
+    <li><NavLink to='/projects' className='nav__link'>Projects</NavLink></li>
+    <ThemeToggle />
+  </ul>
+</nav>
 
-    </div>
   )
 }
 
