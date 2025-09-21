@@ -9,9 +9,8 @@ $desktop-breakpoint: 1024px; // Changed from 1280px for consistency
 // 2. FONT STACKS & TYPOGRAPHY
 // -------------------------------------------------------------
 // Fonts
-$font-heading: 'Montserrat', sans-serif;
-$font-body: 'Montserrat', sans-serif; // or choose another if you want contrast later
-
+$font-heading: "Montserrat", sans-serif;
+$font-body: "Montserrat", sans-serif; // or choose another if you want contrast later
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -52,17 +51,17 @@ $footer-label-button-height-mobile: 1.125rem;
 // 4. COLORS
 // -------------------------------------------------------------
 $primary-dark: #323232;
-$primary-mid: #AFAFAF;
-$primary-light: #FFFFFF;
+$primary-mid: #afafaf;
+$primary-light: #ffffff;
 // $primary-orange: #d55e15;
-$primary-green: #28a745 ;
+$primary-green: #28a745;
 
 $secondary-dark: #000000;
-$secondary-mid: #E1E1E1;
-$secondary-light: #FAFAFA;
+$secondary-mid: #e1e1e1;
+$secondary-light: #fafafa;
 // $secondary-orange: #f8eac6;
 
-$form-field-error: #D22D2D;
+$form-field-error: #d22d2d;
 
 // -------------------------------------------------------------
 // 5. SPACING & UNITS
@@ -185,9 +184,14 @@ $transition-slow: 0.6s ease-out;
   --color-error-background: #f8d7da;
 
   --color-white: #ffffff;
-  --color-success: $primary-green
+  --color-success: #{$primary-green};
   --color-black: #000000;
   --color-overlay: rgba(0, 0, 0, 0.9);
+
+  // Additional portfolio colors
+  --color-bg-secondary: var(--color-secondary-light);
+  --color-primary: #209bff;
+  --color-secondary: #3edfff;
 
   --nav-link-color: var(--color-black);
   --nav-hamburger-color: black;
@@ -200,16 +204,16 @@ $transition-slow: 0.6s ease-out;
   );
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   // Swap primary and secondary dark colors
   --color-primary: var(--color-secondary-dark);
   --color-secondary: var(--color-primary-dark);
-.nav__icon {
-  filter: brightness(0) invert(1);
-  transition: filter 0.3 ease;
-}
+  .nav__icon {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3 ease;
+  }
   // Use adjusted mid colors for dark mode for proper contrast
-  --color-primary-mid-dark: #5a5a5a;   // You can tweak these values as needed
+  --color-primary-mid-dark: #5a5a5a; // You can tweak these values as needed
   --color-secondary-mid-dark: #7d7d7d;
 
   --color-primary-mid-light: var(--color-primary-mid-dark);
@@ -238,6 +242,11 @@ $transition-slow: 0.6s ease-out;
 
   --color-white: #000000;
   --color-black: #ffffff;
+
+  // Dark theme portfolio colors
+  --color-bg-secondary: #1a1a1a;
+  --color-primary: #209bff;
+  --color-secondary: #3edfff;
 
   --nav-gradient: linear-gradient(
     270deg,
