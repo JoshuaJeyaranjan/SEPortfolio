@@ -8,6 +8,8 @@
 .contact-hero {
   padding: 6rem 1rem 4rem;
   text-align: center;
+  
+  background-image: url(../../../public/photoAssets/hero.jpg);
   background: linear-gradient(
     135deg,
     var(--color-primary),
@@ -24,7 +26,7 @@
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-
+    color: white;
     @media (max-width: 768px) {
       font-size: 2.5rem;
     }
@@ -34,10 +36,32 @@
     font-size: 1.3rem;
     opacity: 0.9;
     font-weight: 300;
-
+    color: white;
     @media (max-width: 768px) {
       font-size: 1.1rem;
     }
+  }
+
+   background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--color-white);
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/photoAssets/hero.jpg');
+    opacity: 0.3;
   }
 }
 
@@ -90,14 +114,19 @@
   padding: 1.5rem;
   background: var(--color-white);
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(74, 135, 249, 0.1);;
   }
-
+  &__link {
+    text-decoration: none;
+    color: var(--color-text-primary);
+  }
   &__icon {
     font-size: 2rem;
     width: 60px;
@@ -196,11 +225,19 @@
   text-align: center;
 
   &--primary {
-    background: var(--color-primary);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
     color: var(--color-white);
 
     &:hover {
-      background: var(--color-secondary);
+      background: linear-gradient(
+        135deg,
+        var(--color-primary),
+        var(--color-secondary)
+      );
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
@@ -215,4 +252,17 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.contact-method__image {
+  width: 2rem;
+  transition: filter 0.3s ease;
+}
+
+[data-theme='light'] .contact-method__image {
+  filter: invert(1);
+}
+
+[data-theme='dark'] .contact-method__image {
+  filter: invert(0);
 }

@@ -2,20 +2,16 @@ import React from "react";
 import "./AboutPage.scss";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
-
+import Banner from "../../Components/Banner/Banner";
 function AboutPage() {
   return (
     <div className="about-page">
       <Nav />
 
-      <section className="about-hero">
-        <div className="container">
-          <h1 className="about-hero__title">About Me</h1>
-          <p className="about-hero__subtitle">
-            Passionate about creating digital solutions that make a difference
-          </p>
-        </div>
-      </section>
+      <Banner
+        title="About Me"
+        subtitle="Passionate about creating digital solutions that make a difference"
+      />
 
       <section className="about-content">
         <div className="container">
@@ -43,7 +39,7 @@ function AboutPage() {
 
             <div className="about-image">
               <div className="about-image__placeholder">
-                <span>👨‍💻</span>
+                
               </div>
             </div>
           </div>
@@ -57,8 +53,8 @@ function AboutPage() {
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Software Engineer</h3>
-                <h4>Company Name • 2022 - Present</h4>
+                <h3> FullStack Software Engineer</h3>
+                <h4>Freelance • 2024 - Present</h4>
                 <p>
                   Developed and maintained full-stack web applications using
                   React, Node.js, and PostgreSQL. Led a team of 3 developers and
@@ -70,12 +66,10 @@ function AboutPage() {
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Frontend Developer</h3>
-                <h4>Previous Company • 2020 - 2022</h4>
+                <h3>Software Engineering Bootcamp</h3>
+                <h4>BrainStation • 2023</h4>
                 <p>
-                  Built responsive user interfaces and collaborated with design
-                  teams to implement pixel-perfect designs. Specialized in React
-                  and modern CSS frameworks.
+                Graduated from BrainStation’s intensive Software Engineering Bootcamp, covering full-stack development with JavaScript, React, Node.js, and SQL/NoSQL databases. Developed and deployed end-to-end applications in team-based projects, applying agile workflows and modern industry practices.
                 </p>
               </div>
             </div>
@@ -83,12 +77,10 @@ function AboutPage() {
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Computer Science Degree</h3>
-                <h4>University Name • 2016 - 2020</h4>
+                <h3>Web Development Certification</h3>
+                <h4>BrainStation • 2023</h4>
                 <p>
-                  Bachelor of Science in Computer Science with focus on software
-                  engineering, data structures, and algorithms. Graduated Magna
-                  Cum Laude.
+                Completed BrainStation’s Web Development Certification, gaining hands-on experience with HTML, CSS, and responsive design fundamentals. Built and deployed polished static websites that emphasized clean code, accessibility, and professional presentation.
                 </p>
               </div>
             </div>

@@ -28,17 +28,37 @@
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+  
+    /* Gradient text */
     background: linear-gradient(
       135deg,
       var(--color-primary),
-      var(--color-secondary)
+      var(--color-secondary),
+      var(--color-primary)
     );
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
+  
+    /* Animate gradient */
+    animation: gradientMoveText 4s linear infinite;
+  
     @media (max-width: 768px) {
       font-size: 2.5rem;
+    }
+  }
+  
+  /* Keyframes for gradient text */
+  @keyframes gradientMoveText {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
@@ -54,7 +74,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-
+    
     @media (max-width: 768px) {
       justify-content: center;
     }
@@ -129,20 +149,46 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  
 }
 
 .skill__tag {
-  background: var(--color-primary);
-  color: var(--color-white);
+  position: relative;
+  display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  cursor: default;
+
+  // Animated gradient background
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  background-size: 300% 300%;
+  animation: gradientMoveSkill 4s linear infinite;
+  color: var(--color-white);
+  transition: transform 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background: var(--color-secondary);
     transform: scale(1.05);
+    color: var(--color-black);
+  }
+}
+
+// Keyframes for flowing gradient on skill tags
+@keyframes gradientMoveSkill {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -215,12 +261,43 @@
   margin-bottom: 1.5rem;
 
   span {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
+    position: relative;
+    display: inline-block;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
+    color: var(--color-white);
+    cursor: default;
+
+    // Animated gradient background
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-primary)
+    );
+    background-size: 300% 300%;
+    animation: gradientMoveTech 3s linear infinite;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      color: var(--color-black);
+    }
+  }
+}
+
+// Keyframes for flowing gradient on tech tags
+@keyframes gradientMoveTech {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -239,7 +316,11 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background: var(--color-primary);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );;
     color: var(--color-white);
   }
 }
@@ -273,30 +354,47 @@
 }
 
 .contact__link {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: var(--color-white);
-  color: var(--color-text-primary);
-  text-decoration: none;
   border-radius: 12px;
   font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+  overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+  background-size: 300% 300%; // make it larger than the element so it can move
+  animation: gradientMove 6s linear infinite; // continuous movement
+
+  span {
+    position: relative;
+    z-index: 1; // keep text above gradient
+    font-size: 1.2rem;
+  }
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    background: var(--color-primary);
     color: var(--color-white);
-  }
-
-  span {
-    font-size: 1.2rem;
   }
 }
 
+/* Keyframes for moving gradient */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 // Button styles
 .btn {
   display: inline-block;
@@ -324,9 +422,14 @@
     background: transparent;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
+    transition: 0.3s ease;
 
     &:hover {
-      background: var(--color-primary);
+      background: linear-gradient(
+        135deg,
+        var(--color-primary),
+        var(--color-secondary)
+      );
       color: var(--color-white);
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -338,7 +441,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--color-text-primary);
+  color: var(--color-black);
 }
 
 .container {

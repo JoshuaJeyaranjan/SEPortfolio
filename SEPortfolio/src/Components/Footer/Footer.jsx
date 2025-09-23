@@ -53,7 +53,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <span>💼</span>
+                        <img 
+                className="contact-icon"
+                src='/photoAssets/linkedin1.svg'
+                >
+                </img>
               </a>
               <a
                 href="https://github.com/yourusername"
@@ -62,14 +66,22 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <span>🐙</span>
+                        <img 
+                className="contact-icon"
+                src='/photoAssets/github.svg'
+                >
+                </img>
               </a>
               <a
                 href="mailto:your.email@example.com"
                 className="footer__social-link"
                 aria-label="Email"
               >
-                <span>📧</span>
+                <img 
+                className="contact-icon"
+                src='/photoAssets/email1.svg'
+                >
+                </img>
               </a>
             </div>
           </div>

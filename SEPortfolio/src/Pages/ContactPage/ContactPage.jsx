@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ContactPage.scss";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
-
+import Banner from "../../Components/Banner/Banner";
 function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -30,14 +30,10 @@ function ContactPage() {
     <div className="contact-page">
       <Nav />
 
-      <section className="contact-hero">
-        <div className="container">
-          <h1 className="contact-hero__title">Get In Touch</h1>
-          <p className="contact-hero__subtitle">
-            Let's discuss your next project or just say hello!
-          </p>
-        </div>
-      </section>
+      <Banner
+        title="Get In Touch"
+        subtitle="Let's discuss your next project or just say hello!"
+      />
 
       <section className="contact-content">
         <div className="container">
@@ -52,26 +48,56 @@ function ContactPage() {
 
               <div className="contact-methods">
                 <div className="contact-method">
-                  <div className="contact-method__icon">📧</div>
+                  <div className="contact-method__icon">
+                    <img
+                      className="contact-method__image"
+                      src="/photoAssets/email1.svg"
+                    ></img>
+                  </div>
                   <div className="contact-method__content">
                     <h3>Email</h3>
-                    <p>your.email@example.com</p>
+                    <a
+                      className="contact-method__link"
+                      href="mailto:joshuajeyaranjan@gmail.com"
+              ></a>
                   </div>
                 </div>
 
                 <div className="contact-method">
-                  <div className="contact-method__icon">💼</div>
+                  <div className="contact-method__icon">
+                    {" "}
+                    <img
+                      className="contact-method__image"
+                      src="/photoAssets/linkedin1.svg"
+                    ></img>
+                  </div>
                   <div className="contact-method__content">
                     <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/yourprofile</p>
+                    <a
+                      className="contact-method__link"
+                      href="https://www.linkedin.com/in/joshuajeyaranjan/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    ></a>
                   </div>
                 </div>
 
                 <div className="contact-method">
-                  <div className="contact-method__icon">🐙</div>
+                  <div className="contact-method__icon">
+                    {" "}
+                    <img
+                      className="contact-method__image"
+                      src="/photoAssets/github.svg"
+                    ></img>
+                  </div>
                   <div className="contact-method__content">
                     <h3>GitHub</h3>
-                    <p>github.com/yourusername</p>
+                    <a
+                      className="contact-method__link"
+                      href="https://github.com/JoshuaJeyaranjan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    ></a>
                   </div>
                 </div>
               </div>

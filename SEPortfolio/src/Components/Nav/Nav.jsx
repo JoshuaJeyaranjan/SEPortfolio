@@ -7,11 +7,8 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__container">
-        <Link to="/" className="nav__logo">
-          <span>JJ</span>
-        </Link>
 
-        <ul className="nav__list">
+      <ul className="nav__list">
           <li>
             <NavLink to="/" className="nav__link">
               Home
@@ -32,10 +29,16 @@ function Nav() {
               Contact
             </NavLink>
           </li>
-          <li>
+          
+        </ul>
+
+        
+        <li>
             <ThemeToggle />
           </li>
-        </ul>
+        
+
+      
       </div>
     </nav>
   );

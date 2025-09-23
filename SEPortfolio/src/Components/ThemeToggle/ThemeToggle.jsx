@@ -1,19 +1,11 @@
 import { useTheme } from '../../context/ThemeContext';
-import './ThemeToggle.scss'
-
-import darkIcon from '../../../public/photoAssets/toggle-dark.svg'
-import lightIcon from '../../../public/photoAssets/toggle-light.svg'
-
+import './ThemeToggle.scss';
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
-  // SVG files placed in /public/photoAssets/
-  const iconSrc = theme === 'light'
-    ? '/photoAssets/toggle-light.svg'   // show "dark" icon while theme is light (indicates action)
-    : '/photoAssets/toggle-dark.svg'; // show "light" icon while theme is dark
-
-  const label = theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme';
+  const label =
+    theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme';
 
   return (
     <button
@@ -24,7 +16,11 @@ function ThemeToggle() {
       title={label}
       type="button"
     >
-      <img src={iconSrc} alt={label} className="theme-toggle__icon" />
+      <img
+        src="/photoAssets/toggle-light.svg"
+        alt={label}
+        className={`theme-toggle__icon ${theme === 'dark' ? 'dark' : ''}`}
+      />
     </button>
   );
 }

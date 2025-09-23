@@ -182,26 +182,35 @@ function HomePage() {
               <p>Ready to work together or have a question about my work?</p>
               <div className="contact__links">
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/joshuajeyaranjan/"
                   className="contact__link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span>💼</span> LinkedIn
+                           <img
+                      className="contact-method__image"
+                      src="/photoAssets/linkedin1.svg"
+                    ></img> LinkedIn
                 </a>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/JoshuaJeyaranjan"
                   className="contact__link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span>🐙</span> GitHub
+                      <img
+                      className="contact-method__image"
+                      src="/photoAssets/github.svg"
+                    ></img> GitHub
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:joshuajeyaranjan@gmail.com"
                   className="contact__link"
                 >
-                  <span>📧</span> Email
+                      <img
+                      className="contact-method__image"
+                      src="/photoAssets/email1.svg"
+                    ></img> Email
                 </a>
               </div>
             </div>
